@@ -225,8 +225,8 @@ void retro_set_environment(retro_environment_t cb)
 {
     environ_cb = cb;
 
-    // Allow running core with no game selected
-    bool no_rom = true;
+    // Require a game to be loaded.
+    bool no_rom = false;
     cb(RETRO_ENVIRONMENT_SET_SUPPORT_NO_GAME, &no_rom);
 
     // Set up the core options, which are retrieved with update_variables().
